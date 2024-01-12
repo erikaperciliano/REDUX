@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
-
+import UserActionTypes from '../../redux/user/action-types'
 // Components
 import Cart from "../cart/index";
 
@@ -22,7 +22,7 @@ function Header() {
   // The reducer will be called when the user click on the login button
   const handleLoginClick = () =>{
     dispatch({
-      type: 'user/login',
+      type: UserActionTypes.LOGIN,
       payload: { name: 'Erika', email: 'test@gmail.com'}
     })
   }
