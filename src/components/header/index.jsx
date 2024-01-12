@@ -22,7 +22,8 @@ function Header() {
   // The reducer will be called when the user click on the login button
   const handleLoginClick = () =>{
     dispatch({
-      type: 'user/login'
+      type: 'user/login',
+      payload: { name: 'Erika', email: 'test@gmail.com'}
     })
   }
 
