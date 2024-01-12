@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
-import UserActionTypes from '../../redux/user/action-types'
 // Components
 import Cart from "../cart/index";
 
 // Styles
 import * as Styles from "./styles";
+import { loginUser, logoutUser } from "../../redux/user/acton";
 
 function Header() {
   const [cartIsVisible, setCartIsVisible] = useState(false);
@@ -20,17 +20,12 @@ function Header() {
   };
 
   // The reducer will be called when the user click on the login button
-  const handleLoginClick = () =>{
-    dispatch({
-      type: UserActionTypes.LOGIN,
-      payload: { name: 'Erika', email: 'test@gmail.com'}
-    })
+  const handleLoginClick = () => {
+    dispatch(loginUser({ name: 'Erika', email: 'test@gmail.com'}))
   }
 
   const handleLogoutClick = () => {
-    dispatch({
-      type: UserActionTypes.LOGOUT
-    })
+    dispatch(logoutUser())
   }
 
   return (
